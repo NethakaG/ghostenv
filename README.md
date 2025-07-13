@@ -236,7 +236,8 @@ This project is in early development and contributions are welcome! Areas that n
 
 ## License
 
-[Add your license here]
+This project is licensed under the MIT License.  
+See the [LICENSE](LICENSE) file for full details.
 
 ---
 
