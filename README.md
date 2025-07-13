@@ -202,13 +202,6 @@ print('Mean:', np.mean(arr))
 
 ---
 
-## Requirements
-
-- Python 3.7 or higher  
-- pip (included with Python)
-
----
-
 ## Development Status & Known Issues
 
 ⚠️ This project is still in development. Known limitations:
