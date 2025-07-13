@@ -1,12 +1,11 @@
 # ghostenv 👻  
-**Temporary, disposable virtual environments for testing pip packages**
+Temporary, disposable virtual environments for testing pip packages
 
 ⚠️ Development Status: This project is still in active development and may contain bugs or unexpected behavior. Use with caution in production environments.
 
 ---
 
-## What is ghostenv?
-
+## What is ghostenv?  
 ghostenv is a command-line tool that creates temporary, isolated Python virtual environments for quickly testing pip packages without cluttering your system or main development environment. Perfect for:
 
 - Testing new packages before adding them to your project  
@@ -16,34 +15,31 @@ ghostenv is a command-line tool that creates temporary, isolated Python virtual 
 
 ---
 
-## Features
+## Features  
+🚀 Quick package testing – Install and test packages in seconds  
+🧹 Automatic cleanup – Environments are deleted by default (unless you choose to keep them)  
+📝 Smart test file generation – Creates sample code for common packages  
+🐍 Interactive REPL – Drop into a Python shell with packages pre-installed  
+📦 Requirements file support – Install from requirements.txt  
+🖥️ Cross-platform – Works on Windows, macOS, and Linux  
 
-- 🚀 Quick package testing – Install and test packages in seconds  
-- 🧹 Automatic cleanup – Environments are deleted by default (unless you choose to keep them)  
-- 📝 Smart test file generation – Creates sample code for common packages  
-- 🔧 IDE integration – Opens test files in your preferred editor  
-- 📦 Requirements file support – Install from requirements.txt  
-- 🐍 Interactive REPL – Drop into a Python shell with packages pre-installed  
-- 🖥️ Cross-platform – Works on Windows, macOS, and Linux  
+⚠️ Note: All testing currently happens in REPL only. Ghostenv no longer opens files in an IDE.
 
 ---
 
-## Installation
-
+## Installation  
 ⚠️ Note: This package is not yet published to PyPI. For now, you'll need to install from source.
 
 ### Install from source
-
 ```bash
-git clone https://github.com/yourusername/ghostenv.git
-cd ghostenv
+git clone https://github.com/yourusername/ghostenv.git  
+cd ghostenv  
 pip install -e .
 ```
 
 ### Future PyPI installation (not available yet)
-
 ```bash
-# This will work once published to PyPI
+# This will work once published to PyPI  
 pip install ghostenv
 ```
 
@@ -52,39 +48,28 @@ pip install ghostenv
 ## Quick Start
 
 ### Test a single package
-
 ```bash
 ghostenv run requests
 ```
 
 ### Test multiple packages
-
 ```bash
 ghostenv run requests pandas numpy
 ```
 
 ### Install from requirements file
-
 ```bash
 ghostenv run --requirements requirements.txt
 ```
 
 ### Run a specific script
-
 ```bash
 ghostenv run requests --run my_script.py
 ```
 
 ### Keep the environment after testing
-
 ```bash
 ghostenv run pandas --keep
-```
-
-### Open test file in IDE
-
-```bash
-ghostenv run matplotlib --ide
 ```
 
 ---
@@ -92,18 +77,15 @@ ghostenv run matplotlib --ide
 ## Usage
 
 ### Basic Commands
-
 ```bash
-ghostenv run [PACKAGES] [OPTIONS]
+ghostenv run [PACKAGES] [OPTIONS]  
 ghostenv version
 ```
 
 ### Options
-
 - `--keep` – Keep the temporary environment after exit  
 - `--run SCRIPT` – Python script to run in the environment  
 - `--requirements FILE` – Requirements file to install from  
-- `--ide` – Open test file in IDE instead of REPL  
 - `--help` – Show help message  
 
 ---
@@ -111,23 +93,21 @@ ghostenv version
 ## Examples
 
 ### Quick package exploration
-
 ```bash
-# Test requests library
+# Test requests library  
 ghostenv run requests
 ```
 
 This will:  
-1. Create a temporary virtual environment  
-2. Install requests  
-3. Generate a test file with sample HTTP requests  
-4. Open your preferred IDE or Python REPL  
-5. Clean up when you're done  
+- Create a temporary virtual environment  
+- Install `requests`  
+- Generate a test file with sample HTTP requests  
+- Launch an interactive Python REPL  
+- Clean up when you're done  
 
 ### Development workflow
-
 ```bash
-# Test dependencies for a new project
+# Test dependencies for a new project  
 ghostenv run flask sqlalchemy pytest --keep
 ```
 
@@ -137,29 +117,10 @@ With `--keep`, you can:
 - Activate the environment later if needed  
 
 ### Script testing
-
 ```bash
-# Run a script with specific dependencies
+# Run a script with specific dependencies  
 ghostenv run beautifulsoup4 lxml --run scraper.py
 ```
-
----
-
-## Supported IDEs
-
-ghostenv automatically detects and supports these editors:
-
-- Visual Studio Code (`code`, `code-insiders`)  
-- PyCharm (`pycharm`, `pycharm64`)  
-- Sublime Text (`subl`)  
-- Atom (`atom`)  
-- Vim/Neovim (`vim`, `nvim`)  
-- Emacs (`emacs`)  
-- Notepad++ (`notepad++`)  
-- IDLE (`idle`)  
-- Spyder (`spyder`)  
-
-If no IDE is found or selected, ghostenv falls back to an interactive Python REPL.
 
 ---
 
@@ -167,8 +128,7 @@ If no IDE is found or selected, ghostenv falls back to an interactive Python REP
 
 When you install packages, ghostenv creates a test file with relevant sample code:
 
-### For requests:
-
+### For `requests`:
 ```python
 import requests
 
@@ -178,8 +138,7 @@ print('Response:', response.json())
 print('Status:', response.status_code)
 ```
 
-### For pandas:
-
+### For `pandas`:
 ```python
 import pandas as pd
 
@@ -189,8 +148,7 @@ print('DataFrame:')
 print(df)
 ```
 
-### For numpy:
-
+### For `numpy`:
 ```python
 import numpy as np
 
@@ -207,39 +165,35 @@ print('Mean:', np.mean(arr))
 ⚠️ This project is still in development. Known limitations:
 
 - Limited test file templates (currently supports requests, pandas, numpy)  
-- IDE detection may not work on all systems  
 - Some package installations may fail due to system dependencies  
 - Windows path handling may need improvements  
 - Error messages could be more informative  
+- Only supports REPL — IDE launching is not available in this version  
 
 ---
 
-## Contributing
-
+## Contributing  
 This project is in early development and contributions are welcome! Areas that need work:
 
 - More comprehensive test file templates  
 - Better error handling and user feedback  
-- Improved IDE detection  
 - Package dependency resolution  
 - Configuration file support  
 - Better Windows compatibility  
 
 ---
 
-## License
-
+## License  
 This project is licensed under the MIT License.  
-See the [LICENSE](LICENSE) file for full details.
+See the LICENSE file for full details.
 
 ---
 
 ## Changelog
 
-### Current Version
-
+**Current Version**  
 - Initial release with basic functionality  
-- Support for package installation and IDE integration  
+- Support for package installation  
 - Automatic cleanup and keep options  
 - Requirements file support  
 
