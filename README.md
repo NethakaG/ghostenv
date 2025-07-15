@@ -32,7 +32,7 @@ ghostenv is a command-line tool that creates temporary, isolated Python virtual 
 
 ### Install from source
 ```bash
-git clone https://github.com/yourusername/ghostenv.git  
+git clone https://github.com/NethakaG/ghostenv.git  
 cd ghostenv  
 pip install -e .
 ```
